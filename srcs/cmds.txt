@@ -1,0 +1,33 @@
+
+
+docker run nginx:latest
+
+Run with terminal and stdout attached
+docker docker run -it nginx
+
+Run detached
+docker run -d nginx 
+
+List processes (-a to also list finished processes)
+docker ps -a
+docker inspect ...
+
+docker images
+
+Run cmd on container
+docker run ubuntu sleep 200  
+docker exec nervous_herschel echo "aaaa"  
+
+Remove
+docker rm nginx
+docker rmi nginx
+
+-p 80:8080
+-v /host/aa:/container/aa
+
+docker logs
+
+this command will delete all docker images
+docker rmi -f $(docker images -q)
+
+docker rm $(docker ps --filter status=exited -q)
