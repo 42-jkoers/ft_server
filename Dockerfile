@@ -63,7 +63,7 @@ RUN chown -R $USER:$USER /var/www/ && \
 	chmod -R 755 /var/www/
 
 RUN mv start.sh /root/ && \
-	chmod 770 /root/start.sh
+	chmod 777 /root/start.sh
 
 RUN rm -rf /tmp/srcs/
 EXPOSE 80 443
