@@ -2,8 +2,6 @@ FROM debian:buster
 
 WORKDIR /tmp/srcs/
 
-# either "off" or "on"
-ARG AUTOINDEX=off
 
 RUN apt-get update && \
 	apt-get upgrade -y
@@ -35,6 +33,8 @@ RUN chmod 770 mkcert-v1.4.3-linux-amd64 && \
 	chmod -R 770 /etc/nginx/ssl/
 
 # nginx
+# either "off" or "on"
+ARG AUTOINDEX=off
 RUN rm -rf /etc/nginx/sites-enabled/* && \
 	mv html/* /var/www/ && \
 	mv nginx/nginx_${AUTOINDEX}.conf /etc/nginx/sites-available/nginx.conf && \
